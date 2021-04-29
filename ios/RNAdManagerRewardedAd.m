@@ -12,7 +12,7 @@ static NSString *const kEventRewarded = @"rewardedVideoAdRewarded";
 static NSString *const kEventVideoStarted = @"rewardedVideoAdVideoStarted";
 static NSString *const kEventVideoCompleted = @"rewardedVideoAdVideoCompleted";
 
-@implementation RNAdMobRewarded
+@implementation RNAdManagerRewardedAd
 {
     NSString *_adUnitID;
     NSArray *_testDevices;
