@@ -55,7 +55,7 @@ RCT_EXPORT_METHOD(setAdUnitID:(NSString *)adUnitID)
 
 RCT_EXPORT_METHOD(setTestDevices:(NSArray *)testDevices)
 {
-    _testDevices = RNAdMobProcessTestDevices(testDevices, kGADSimulatorID);
+    _testDevices = RNAdManagerProcessTestDevices(testDevices, kGADSimulatorID);
 }
 
 RCT_EXPORT_METHOD(requestAd:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject)
