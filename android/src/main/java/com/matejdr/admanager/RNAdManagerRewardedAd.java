@@ -1,8 +1,9 @@
-package com.sbugert.rnadmob;
+package com.matejdr.admanager;
 
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.Nullable;
+import android.location.Location;
+import androidx.annotation.Nullable;
 
 import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.Callback;
@@ -46,7 +47,7 @@ public class RNAdManagerRewardedAd extends ReactContextBaseJavaModule implements
         return REACT_CLASS;
     }
 
-    public RNAdMobRewardedVideoAdModule(ReactApplicationContext reactContext) {
+    public RNAdManagerRewardedAd(ReactApplicationContext reactContext) {
         super(reactContext);
     }
 
@@ -147,9 +148,9 @@ public class RNAdManagerRewardedAd extends ReactContextBaseJavaModule implements
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
-                RNAdMobRewardedVideoAdModule.this.mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(getCurrentActivity());
+                RNAdManagerRewardedAd.this.mRewardedVideoAd = MobileAds.getRewardedVideoAdInstance(getCurrentActivity());
 
-                RNAdMobRewardedVideoAdModule.this.mRewardedVideoAd.setRewardedVideoAdListener(RNAdMobRewardedVideoAdModule.this);
+                RNAdManagerRewardedAd.this.mRewardedVideoAd.setRewardedVideoAdListener(RNAdManagerRewardedAd.this);
 
                 if (mRewardedVideoAd.isLoaded()) {
                     promise.reject("E_AD_ALREADY_LOADED", "Ad is already loaded.");
